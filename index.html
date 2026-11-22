@@ -130,6 +130,26 @@
 
     <!-- NỘI DUNG CHÍNH -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <!-- Thanh thông tin học sinh (Để ghi nhận kết quả về Google Sheets) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-teal-200/90 p-4 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 border border-teal-200 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-user-graduate text-lg"></i>
+                </div>
+                <div>
+                    <h2 class="text-sm font-bold text-slate-900">Thông tin học sinh làm bài</h2>
+                    <p class="text-xs text-slate-500">Điền Họ tên và Lớp để hệ thống tự động gửi điểm & chi tiết bài làm về cho thầy Lê Minh Trung.</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+                <input type="text" id="student-name-input" oninput="updateStudentProfile()" placeholder="Họ và tên (VD: Nguyễn Văn A)" class="px-3.5 py-2 rounded-xl border border-slate-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-100 outline-none text-sm font-medium text-slate-900 w-full sm:w-56">
+                <input type="text" id="student-class-input" oninput="updateStudentProfile()" placeholder="Lớp (VD: 12A1)" class="px-3.5 py-2 rounded-xl border border-slate-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-100 outline-none text-sm font-medium text-slate-900 w-full sm:w-32">
+                <span id="student-status-badge" class="px-3 py-2 rounded-xl text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 text-center shrink-0">
+                    <i class="fa-solid fa-circle-exclamation mr-1"></i>Chưa nhập tên
+                </span>
+            </div>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
             <!-- CỘT TRÁI (8 CỘT): LỘ TRÌNH & BẢNG ĐIỀU KHIỂN NỘI DUNG TƯƠNG TÁC -->
@@ -1007,8 +1027,8 @@
                         {
                             id: "th25_0227_p2_2",
                             label: "Câu 2",
-                            context: "Một nhóm học sinh thảo luận phương án thí nghiệm làm giảm ảnh hưởng của sự trao đổi nhiệt với môi trường khi đo nhiệt nóng chảy riêng của nước đá. Họ dùng các dụng cụ: Phễu chứa nước đá (1), dây điện trở (2), cốc (3), cân điện tử (4) như hình bên.<br>Nhóm học sinh cho rằng: <em>Trong thời gian cấp điện cho dây điện trở, nếu xác định được càng chính xác khối lượng nước đá tan chảy vào cốc do nhiệt lượng nhận từ môi trường thì sẽ giảm được càng nhiều ảnh hưởng của sự trao đổi nhiệt giữa nước đá với môi trường.</em><br>Phương án thí nghiệm của họ gồm hai giai đoạn và được tóm tắt như sau:<br><strong>Giai đoạn 1.</strong> Chưa cấp điện cho dây điện trở: Xác định khối lượng $m_1$ của nước đá tan và đã chảy từ phễu vào cốc trong khoảng thời gian $t_1$.<br><strong>Giai đoạn 2.</strong> Cấp điện cho dây điện trở: Xác định khối lượng $m_2$ của nước đá tan và đã chảy từ phễu vào cốc trong khoảng thời gian $t_2$.<br>Ở cả hai giai đoạn, coi rằng khối lượng nước đá tan và đã chảy vào cốc do nhiệt lượng nhận từ môi trường trong những khoảng thời gian bằng nhau là như nhau và bỏ qua các ảnh hưởng khác (bay hơi, ngưng tụ của nước...).",
-                            svg: `<svg viewBox="0 0 220 220" class="w-44 h-44 mx-auto bg-white rounded-lg border border-slate-200 p-2 shrink-0"><rect x="20" y="190" width="160" height="8" fill="#475569"/><rect x="35" y="15" width="6" height="175" fill="#475569"/><rect x="35" y="42" width="65" height="5" fill="#475569"/><polygon points="80,22 155,22 123,90 112,90" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/><line x1="112" y1="90" x2="112" y2="116" stroke="#0284c7" stroke-width="2"/><line x1="123" y1="90" x2="123" y2="112" stroke="#0284c7" stroke-width="2"/><rect x="96" y="30" width="16" height="14" fill="#bae6fd" stroke="#0369a1"/><rect x="116" y="28" width="18" height="15" fill="#bae6fd" stroke="#0369a1"/><rect x="104" y="48" width="22" height="14" fill="#bae6fd" stroke="#0369a1"/><path d="M 105 70 Q 117 78 128 70" fill="none" stroke="#dc2626" stroke-width="2.5"/><line x1="128" y1="70" x2="165" y2="70" stroke="#dc2626" stroke-width="1.5"/><line x1="105" y1="70" x2="165" y2="62" stroke="#dc2626" stroke-width="1.5"/><circle cx="117" cy="124" r="2.5" fill="#0284c7"/><polyline points="95,130 95,167 140,167 140,130" fill="none" stroke="#334155" stroke-width="2"/><rect x="96" y="151" width="43" height="15" fill="#bae6fd" opacity="0.7"/><rect x="82" y="168" width="70" height="22" rx="3" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/><rect x="96" y="173" width="42" height="11" fill="#f8fafc" stroke="#64748b"/><text x="117" y="182" font-size="8" font-family="monospace" text-anchor="middle" fill="#0f172a">8888</text><text x="168" y="38" font-size="11" font-weight="bold" fill="#0f172a">(1)</text><text x="168" y="71" font-size="11" font-weight="bold" fill="#dc2626">(2)</text><text x="148" y="150" font-size="11" font-weight="bold" fill="#0f172a">(3)</text><text x="158" y="183" font-size="11" font-weight="bold" fill="#0f172a">(4)</text></svg>`,
+                            context: `<p class="mb-2">Một nhóm học sinh thảo luận phương án thí nghiệm làm giảm ảnh hưởng của sự trao đổi nhiệt với môi trường khi đo nhiệt nóng chảy riêng của nước đá. Họ dùng các dụng cụ: Phễu chứa nước đá (1), dây điện trở (2), cốc (3), cân điện tử (4) như hình bên.</p><p class="mb-2">Nhóm học sinh cho rằng: <em>Trong thời gian cấp điện cho dây điện trở, nếu xác định được càng chính xác khối lượng nước đá tan chảy vào cốc do nhiệt lượng nhận từ môi trường thì sẽ giảm được càng nhiều ảnh hưởng của sự trao đổi nhiệt giữa nước đá với môi trường.</em></p><p class="mb-1.5">Phương án thí nghiệm của họ gồm hai giai đoạn và được tóm tắt như sau:</p><ul class="list-disc pl-5 space-y-1 mb-2"><li><strong>Giai đoạn 1.</strong> Chưa cấp điện cho dây điện trở: Xác định khối lượng $m_1$ của nước đá tan và đã chảy từ phễu vào cốc trong khoảng thời gian $t_1$.</li><li><strong>Giai đoạn 2.</strong> Cấp điện cho dây điện trở: Xác định khối lượng $m_2$ của nước đá tan và đã chảy từ phễu vào cốc trong khoảng thời gian $t_2$.</li></ul><p>Ở cả hai giai đoạn, coi rằng khối lượng nước đá tan và đã chảy vào cốc do nhiệt lượng nhận từ môi trường trong những khoảng thời gian bằng nhau là như nhau và bỏ qua các ảnh hưởng khác (bay hơi, ngưng tụ của nước...).</p>`,
+                            svg: `<svg viewBox="0 0 220 220" class="w-[212px] h-[212px] mx-auto bg-white rounded-xl border border-slate-200 p-2.5 shrink-0 shadow-sm"><rect x="20" y="190" width="160" height="8" fill="#475569"/><rect x="35" y="15" width="6" height="175" fill="#475569"/><rect x="35" y="42" width="65" height="5" fill="#475569"/><polygon points="80,22 155,22 123,90 112,90" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/><line x1="112" y1="90" x2="112" y2="116" stroke="#0284c7" stroke-width="2"/><line x1="123" y1="90" x2="123" y2="112" stroke="#0284c7" stroke-width="2"/><rect x="96" y="30" width="16" height="14" fill="#bae6fd" stroke="#0369a1"/><rect x="116" y="28" width="18" height="15" fill="#bae6fd" stroke="#0369a1"/><rect x="104" y="48" width="22" height="14" fill="#bae6fd" stroke="#0369a1"/><path d="M 105 70 Q 117 78 128 70" fill="none" stroke="#dc2626" stroke-width="2.5"/><line x1="128" y1="70" x2="165" y2="70" stroke="#dc2626" stroke-width="1.5"/><line x1="105" y1="70" x2="165" y2="62" stroke="#dc2626" stroke-width="1.5"/><circle cx="117" cy="124" r="2.5" fill="#0284c7"/><polyline points="95,130 95,167 140,167 140,130" fill="none" stroke="#334155" stroke-width="2"/><rect x="96" y="151" width="43" height="15" fill="#bae6fd" opacity="0.7"/><rect x="82" y="168" width="70" height="22" rx="3" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/><rect x="96" y="173" width="42" height="11" fill="#f8fafc" stroke="#64748b"/><text x="117" y="182" font-size="8" font-family="monospace" text-anchor="middle" fill="#0f172a">8888</text><text x="168" y="38" font-size="11" font-weight="bold" fill="#0f172a">(1)</text><text x="168" y="71" font-size="11" font-weight="bold" fill="#dc2626">(2)</text><text x="148" y="150" font-size="11" font-weight="bold" fill="#0f172a">(3)</text><text x="158" y="183" font-size="11" font-weight="bold" fill="#0f172a">(4)</text></svg>`,
                             statements: [
                                 {
                                     text: "a) Ở giai đoạn 1, nước đá tan do nhận nhiệt lượng từ môi trường.",
@@ -1036,7 +1056,7 @@
                             id: "th25_0227_p2_3",
                             label: "Câu 3",
                             context: "Một nam châm được đặt trên cân. Một đoạn dây dẫn cứng được giữ cố định, nằm ngang, vuông góc với các đường sức từ của từ trường đều giữa hai cực của nam châm (hình bên). Cảm ứng từ $\\vec{B}$ của từ trường có phương nằm ngang và có độ lớn là $B$. Chiều dài của phần dây dẫn $PQ$ nằm trong vùng từ trường đều giữa hai cực của nam châm là $\\ell$. Ban đầu, chưa có dòng điện chạy trong dây dẫn, cân chỉ một giá trị xác định. Sau đó, cho dòng điện không đổi với cường độ $I$ chạy trong dây dẫn theo chiều từ $P$ đến $Q$. Bỏ qua ảnh hưởng của từ trường Trái Đất.",
-                            svg: `<svg viewBox="0 0 220 185" class="w-44 h-40 mx-auto bg-white rounded-lg border border-slate-200 p-2 shrink-0"><path d="M 65 40 L 65 130 L 155 130 L 155 40 L 130 40 L 130 105 L 90 105 L 90 40 Z" fill="#64748b" stroke="#1e293b" stroke-width="1.5"/><rect x="65" y="40" width="25" height="35" fill="#94a3b8" stroke="#1e293b"/><rect x="130" y="40" width="25" height="35" fill="#475569" stroke="#1e293b"/><text x="77" y="62" font-size="12" font-weight="bold" text-anchor="middle" fill="#0f172a">S</text><text x="142" y="62" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">N</text><line x1="125" y1="50" x2="95" y2="80" stroke="#d97706" stroke-width="4" stroke-linecap="round"/><text x="85" y="83" font-size="11" font-weight="bold" fill="#b45309">P</text><text x="128" y="47" font-size="11" font-weight="bold" fill="#b45309">Q</text><rect x="45" y="131" width="130" height="32" rx="4" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/><rect x="75" y="138" width="70" height="16" fill="#f8fafc" stroke="#64748b"/><text x="110" y="150" font-size="10" font-family="monospace" text-anchor="middle" fill="#0f172a">888.8 g</text></svg>`,
+                            svg: `<svg viewBox="0 0 220 185" class="w-[212px] h-48 mx-auto bg-white rounded-xl border border-slate-200 p-2.5 shrink-0 shadow-sm"><path d="M 65 40 L 65 130 L 155 130 L 155 40 L 130 40 L 130 105 L 90 105 L 90 40 Z" fill="#64748b" stroke="#1e293b" stroke-width="1.5"/><rect x="65" y="40" width="25" height="35" fill="#94a3b8" stroke="#1e293b"/><rect x="130" y="40" width="25" height="35" fill="#475569" stroke="#1e293b"/><text x="77" y="62" font-size="12" font-weight="bold" text-anchor="middle" fill="#0f172a">S</text><text x="142" y="62" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">N</text><line x1="125" y1="50" x2="95" y2="80" stroke="#d97706" stroke-width="4" stroke-linecap="round"/><text x="85" y="83" font-size="11" font-weight="bold" fill="#b45309">P</text><text x="128" y="47" font-size="11" font-weight="bold" fill="#b45309">Q</text><rect x="45" y="131" width="130" height="32" rx="4" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/><rect x="75" y="138" width="70" height="16" fill="#f8fafc" stroke="#64748b"/><text x="110" y="150" font-size="10" font-family="monospace" text-anchor="middle" fill="#0f172a">888.8 g</text></svg>`,
                             statements: [
                                 {
                                     text: "a) Cảm ứng từ $\\vec{B}$ có hướng từ cực $\\text{N}$ sang cực $\\text{S}$ của nam châm.",
@@ -1142,6 +1162,69 @@
                 ]
             }
         };
+
+        // =========================================================================
+        // 1B. CẤU HÌNH KẾT NỐI GOOGLE SHEETS THU THẬP KẾT QUẢ HỌC SINH
+        // =========================================================================
+        const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzCYFURPCMyNz-X4gme6qdc2FRm6rEiIEC2acxHCOemOYhij_8KTTWLuA48SWIV-mXF/exec";
+        const STUDENT_PROFILE_KEY = 'vatli12_student_profile_v1';
+        let quizStartTimestamps = {};
+
+        function loadStudentProfile() {
+            try {
+                const saved = localStorage.getItem(STUDENT_PROFILE_KEY);
+                if (saved) {
+                    const p = JSON.parse(saved);
+                    const nameEl = document.getElementById('student-name-input');
+                    const classEl = document.getElementById('student-class-input');
+                    if (nameEl && p.hoTen) nameEl.value = p.hoTen;
+                    if (classEl && p.lop) classEl.value = p.lop;
+                }
+            } catch (e) {}
+            updateStudentProfileUI();
+        }
+
+        function updateStudentProfile() {
+            const hoTen = (document.getElementById('student-name-input')?.value || '').trim();
+            const lop = (document.getElementById('student-class-input')?.value || '').trim();
+            try {
+                localStorage.setItem(STUDENT_PROFILE_KEY, JSON.stringify({ hoTen, lop }));
+            } catch (e) {}
+            updateStudentProfileUI();
+        }
+
+        function updateStudentProfileUI() {
+            const hoTen = (document.getElementById('student-name-input')?.value || '').trim();
+            const lop = (document.getElementById('student-class-input')?.value || '').trim();
+            const badge = document.getElementById('student-status-badge');
+            if (!badge) return;
+            if (hoTen && lop) {
+                badge.className = "px-3 py-2 rounded-xl text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 text-center shrink-0";
+                badge.innerHTML = `<i class="fa-solid fa-circle-check mr-1"></i>Sẵn sàng gửi điểm`;
+            } else {
+                badge.className = "px-3 py-2 rounded-xl text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 text-center shrink-0";
+                badge.innerHTML = `<i class="fa-solid fa-circle-exclamation mr-1"></i>Chưa nhập đủ tên/lớp`;
+            }
+        }
+
+        function sendResultToGoogleSheet(payload) {
+            if (!GOOGLE_SHEET_WEBAPP_URL) return;
+            fetch(GOOGLE_SHEET_WEBAPP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                showToast('Đã gửi kết quả bài làm về bảng điểm của thầy!', 'success');
+            })
+            .catch((err) => {
+                console.error('Lỗi gửi dữ liệu về Google Sheets:', err);
+                showToast('Không thể kết nối máy chủ lưu điểm, vui lòng kiểm tra mạng.', 'warning');
+            });
+        }
 
         // =========================================================================
         // 2. QUẢN LÝ TRẠNG THÁI & LOCALSTORAGE
@@ -1274,6 +1357,9 @@
 
         function switchTab(tabName) {
             appState.currentTab = tabName;
+            if (tabName === 'quiz' && !quizStartTimestamps[appState.currentTopicId]) {
+                quizStartTimestamps[appState.currentTopicId] = Date.now();
+            }
             
             // Cập nhật giao diện các nút Tab
             const tabs = ['theory', 'quiz', 'resources'];
@@ -1422,7 +1508,7 @@
                     examSecondsLeft = 0;
                     updateExamClockUI();
                     showToast('Hết thời gian 50 phút! Hệ thống tự động nộp bài.', 'warning');
-                    submitQuiz(topicId);
+                    submitQuiz(topicId, true);
                     return;
                 }
                 updateExamClockUI();
@@ -1437,9 +1523,67 @@
             el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
         }
 
+        // =========================================================================
+        // 6B. HÀM HOÁN VỊ ĐỀ THI & PHƯƠNG ÁN TRẢ LỜI (FISHER-YATES SHUFFLE)
+        // =========================================================================
+        let activeShuffledQuiz = {};
+
+        function shuffleArray(arr) {
+            const copy = [...arr];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            }
+            return copy;
+        }
+
+        function buildShuffledQuizForTopic(topicId, forceNew = false) {
+            if (!forceNew && activeShuffledQuiz[topicId]) {
+                return activeShuffledQuiz[topicId];
+            }
+            const rawQuiz = curriculumData[topicId].quiz;
+
+            // 1. Hoán vị thứ tự câu Phần I và hoán vị cả 4 phương án A, B, C, D của từng câu
+            const shuffledPart1 = shuffleArray(rawQuiz.part1).map(q => {
+                const indexedOpts = q.options.map((text, idx) => ({
+                    text,
+                    isCorrect: idx === q.correct
+                }));
+                const mixedOpts = shuffleArray(indexedOpts);
+                return {
+                    ...q,
+                    options: mixedOpts.map(o => o.text),
+                    correct: mixedOpts.findIndex(o => o.isCorrect)
+                };
+            });
+
+            // 2. Hoán vị Phần II (giữ nguyên thứ tự a, b, c, d trong mỗi câu nhưng hoán vị thứ tự các câu nếu có nhiều câu)
+            let shuffledPart2 = rawQuiz.part2 ? { ...rawQuiz.part2 } : null;
+            let shuffledPart2List = rawQuiz.part2List ? shuffleArray(rawQuiz.part2List) : null;
+
+            // 3. Hoán vị Phần III (gom nhóm các câu dùng chung bối cảnh để không làm mất dữ kiện chung)
+            const p3Groups = [];
+            rawQuiz.part3.forEach(item => {
+                if (item.context || p3Groups.length === 0) {
+                    p3Groups.push([item]);
+                } else {
+                    p3Groups[p3Groups.length - 1].push(item);
+                }
+            });
+            const shuffledPart3 = shuffleArray(p3Groups).flat();
+
+            activeShuffledQuiz[topicId] = {
+                part1: shuffledPart1,
+                part2: shuffledPart2,
+                part2List: shuffledPart2List,
+                part3: shuffledPart3
+            };
+            return activeShuffledQuiz[topicId];
+        }
+
         // --- TAB 2: LUYỆN ĐỀ CHUẨN CẤU TRÚC MỚI (3 PHẦN) ---
         function renderQuizHTML(topic) {
-            const qData = topic.quiz;
+            const qData = buildShuffledQuizForTopic(topic.id, false);
             const topicAns = appState.userAnswers[topic.id] || { part1: {}, part2: {}, part3: {}, submitted: false };
 
             let html = `<div class="space-y-8">`;
@@ -1560,10 +1704,10 @@
             p2Items.forEach((p2, p2Idx) => {
                 html += `
                     <div class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-sm space-y-4">
-                        <div class="bg-amber-50/70 border-l-4 border-amber-500 p-3.5 rounded-r-xl text-sm text-slate-800 leading-relaxed flex flex-col md:flex-row gap-4 items-start justify-between">
-                            <div class="flex-1">
-                                <span class="font-bold text-amber-900 block mb-1">${p2.label ? p2.label + ':' : '<i class="fa-solid fa-flask mr-1"></i>Bối cảnh thí nghiệm:'}</span>
-                                <div>${p2.context}</div>
+                        <div class="bg-amber-50/70 border-l-4 border-amber-500 p-4 rounded-r-xl text-sm sm:text-[15px] text-slate-800 leading-relaxed flex flex-col md:flex-row gap-5 items-center md:items-start justify-between">
+                            <div class="flex-1 text-justify">
+                                <span class="font-bold text-amber-900 block mb-1.5">${p2.label ? p2.label + '.' : '<i class="fa-solid fa-flask mr-1"></i>Bối cảnh thí nghiệm:'}</span>
+                                <div class="space-y-1.5">${p2.context}</div>
                             </div>
                             ${p2.svg ? p2.svg : ''}
                         </div>
@@ -1753,6 +1897,7 @@
 
         function selectPart2(topicId, ansKey, stIdx, val) {
             const topic = curriculumData[topicId];
+            const qData = buildShuffledQuizForTopic(topicId, false);
             const ans = ensureTopicAnswerObj(topicId);
             if (ans.submitted) return;
             if (topic.quiz.part2List) {
@@ -1769,58 +1914,119 @@
             ans.part3[qId] = val;
         }
 
-        function submitQuiz(topicId) {
+        function submitQuiz(topicId, autoSubmit = false) {
+            const nameInput = document.getElementById('student-name-input');
+            const classInput = document.getElementById('student-class-input');
+            let hoTen = (nameInput?.value || '').trim();
+            let lop = (classInput?.value || '').trim();
+
+            if (!autoSubmit && (!hoTen || !lop)) {
+                showToast('Em vui lòng nhập đầy đủ Họ và tên, Lớp ở khung phía trên trước khi nộp bài!', 'warning');
+                if (!hoTen && nameInput) {
+                    nameInput.focus();
+                    nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else if (classInput) {
+                    classInput.focus();
+                    classInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
+            if (!hoTen) hoTen = "Học sinh ẩn danh (Hết giờ)";
+            if (!lop) lop = "Chưa ghi lớp";
+
             const topic = curriculumData[topicId];
             const ans = ensureTopicAnswerObj(topicId);
             let score = 0;
+            const letters = ['A', 'B', 'C', 'D'];
+            let p1Details = [];
+            let p2Details = [];
+            let p3Details = [];
 
             if (topic.isFullExam) {
                 // Thang điểm chuẩn Bộ GD&ĐT (28 câu = 10,0 điểm):
                 // Phần I: 0,25đ / câu
-                topic.quiz.part1.forEach(q => {
-                    if (ans.part1[q.id] === q.correct) score += 0.25;
+                qData.part1.forEach((q, idx) => {
+                    const uOpt = ans.part1[q.id];
+                    const isRight = uOpt === q.correct;
+                    if (isRight) score += 0.25;
+                    p1Details.push(`C${idx+1}:${uOpt !== undefined ? letters[uOpt] : '-'}(${isRight ? 'Đ' : 'S'})`);
                 });
                 // Phần II: 1 ý = 0,10đ; 2 ý = 0,25đ; 3 ý = 0,50đ; 4 ý = 1,00đ
                 const p2StdScale = [0, 0.10, 0.25, 0.50, 1.00];
-                topic.quiz.part2List.forEach(p2 => {
+                const subLetters = ['a', 'b', 'c', 'd'];
+                qData.part2List.forEach((p2, p2Idx) => {
                     let rightCount = 0;
+                    let subStr = [];
                     p2.statements.forEach((st, stIdx) => {
-                        if (ans.part2[`${p2.id}_${stIdx}`] === st.correct) rightCount++;
+                        const uVal = ans.part2[`${p2.id}_${stIdx}`];
+                        const isRight = uVal === st.correct;
+                        if (isRight) rightCount++;
+                        subStr.push(`${subLetters[stIdx]}:${uVal === true ? 'Đ' : (uVal === false ? 'S' : '-')}`);
                     });
                     score += p2StdScale[rightCount];
+                    p2Details.push(`C${p2Idx+1}[${subStr.join(',')}](${rightCount}/4)`);
                 });
                 // Phần III: 0,25đ / câu
-                topic.quiz.part3.forEach(q3 => {
-                    const rawVal = (ans.part3[q3.id] || '').trim().replace(',', '.');
-                    const numUser = parseFloat(rawVal);
+                qData.part3.forEach((q3, idx3) => {
+                    const rawVal = (ans.part3[q3.id] || '').trim();
+                    const numUser = parseFloat(rawVal.replace(',', '.'));
                     const numAns = parseFloat(q3.answer);
-                    if (!isNaN(numUser) && Math.abs(numUser - numAns) <= q3.tolerance) {
-                        score += 0.25;
-                    }
+                    const isRight = !isNaN(numUser) && Math.abs(numUser - numAns) <= q3.tolerance;
+                    if (isRight) score += 0.25;
+                    p3Details.push(`C${idx3+1}:${rawVal || '-'}(${isRight ? 'Đ' : 'S'})`);
                 });
             } else {
                 // Thang điểm luyện tập từng chuyên đề (7 câu = 10,0 điểm)
-                topic.quiz.part1.forEach(q => {
-                    if (ans.part1[q.id] === q.correct) score += 1.5;
+                qData.part1.forEach((q, idx) => {
+                    const uOpt = ans.part1[q.id];
+                    const isRight = uOpt === q.correct;
+                    if (isRight) score += 1.5;
+                    p1Details.push(`C${idx+1}:${uOpt !== undefined ? letters[uOpt] : '-'}(${isRight ? 'Đ' : 'S'})`);
                 });
                 let p2CorrectCount = 0;
-                topic.quiz.part2.statements.forEach((st, idx) => {
-                    if (ans.part2[idx] === st.correct) p2CorrectCount++;
+                let subStr = [];
+                const subLetters = ['a', 'b', 'c', 'd'];
+                qData.part2.statements.forEach((st, idx) => {
+                    const uVal = ans.part2[idx];
+                    const isRight = uVal === st.correct;
+                    if (isRight) p2CorrectCount++;
+                    subStr.push(`${subLetters[idx]}:${uVal === true ? 'Đ' : (uVal === false ? 'S' : '-')}`);
                 });
                 const p2Scale = [0, 0.4, 1.0, 2.0, 4.0];
                 score += p2Scale[p2CorrectCount];
-                topic.quiz.part3.forEach(q3 => {
-                    const rawVal = (ans.part3[q3.id] || '').trim().replace(',', '.');
-                    const numUser = parseFloat(rawVal);
+                p2Details.push(`C1[${subStr.join(',')}](${p2CorrectCount}/4)`);
+
+                qData.part3.forEach((q3, idx3) => {
+                    const rawVal = (ans.part3[q3.id] || '').trim();
+                    const numUser = parseFloat(rawVal.replace(',', '.'));
                     const numAns = parseFloat(q3.answer);
-                    if (!isNaN(numUser) && Math.abs(numUser - numAns) <= q3.tolerance) {
-                        score += 3.0;
-                    }
+                    const isRight = !isNaN(numUser) && Math.abs(numUser - numAns) <= q3.tolerance;
+                    if (isRight) score += 3.0;
+                    p3Details.push(`C${idx3+1}:${rawVal || '-'}(${isRight ? 'Đ' : 'S'})`);
                 });
             }
 
             ans.submitted = true;
             ans.lastScore = score;
+
+            // Tính thời gian làm bài
+            const startMs = quizStartTimestamps[topicId] || Date.now();
+            const elapsedSec = Math.max(1, Math.round((Date.now() - startMs) / 1000));
+            const mins = Math.floor(elapsedSec / 60);
+            const secs = elapsedSec % 60;
+            const durationStr = `${mins} phút ${secs} giây`;
+
+            const detailSummary = `[${topic.shortTitle}] | PI: ${p1Details.join(', ')} | PII: ${p2Details.join('; ')} | PIII: ${p3Details.join(', ')}`;
+
+            // Gửi dữ liệu sang Google Sheets
+            sendResultToGoogleSheet({
+                hoTen: hoTen,
+                lop: lop,
+                diem: score.toFixed(2).replace('.', ','),
+                thoiGianLam: durationStr,
+                chiTiet: detailSummary
+            });
 
             const prevBest = appState.quizScores[topicId] || 0;
             if (score >= prevBest) {
@@ -1835,11 +2041,13 @@
 
         function resetQuiz(topicId) {
             appState.userAnswers[topicId] = { part1: {}, part2: {}, part3: {}, submitted: false, lastScore: 0 };
+            buildShuffledQuizForTopic(topicId, true);
+            quizStartTimestamps[topicId] = Date.now();
             if (curriculumData[topicId].isFullExam) {
                 examSecondsLeft = 50 * 60;
             }
             renderTabContent();
-            showToast('Đã làm mới bài luyện tập.', 'info');
+            showToast('Đã hoán vị câu hỏi & phương án cho lượt làm bài mới!', 'info');
         }
 
         function handleResourceAction(type, title) {
@@ -1983,6 +2191,7 @@
         // =========================================================================
         window.addEventListener('DOMContentLoaded', () => {
             loadState();
+            loadStudentProfile();
             initCountdown();
             
             // Hiển thị ngày hiện tại ở mục tiêu
