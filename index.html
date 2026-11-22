@@ -6,6 +6,23 @@
     <title>Cổng Ôn Tập Thi Tốt Nghiệp THPT - Môn Vật Lí. Biên soạn: Thầy giáo Lê Minh Trung - THPT Trần Phú - HK (GDPT 2018)</title>
     <!-- Tải Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Khắc phục lỗi Tailwind CSS ép thẻ SVG của MathJax xuống dòng */
+        mjx-container[jax="SVG"] {
+            display: inline-block !important;
+            line-height: normal;
+        }
+        mjx-container[jax="SVG"] > svg {
+            display: inline !important;
+            vertical-align: middle;
+        }
+        /* Giữ nguyên căn giữa cho công thức độc lập ($$ ... $$) ở phần Lý thuyết */
+        mjx-container[jax="SVG"][display="true"] {
+            display: block !important;
+            text-align: center;
+            margin: 0.75em 0;
+        }
+    </style>
     <!-- Tải Font Inter từ Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
