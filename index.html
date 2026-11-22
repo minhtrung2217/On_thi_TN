@@ -57,9 +57,9 @@
                         <i class="fa-solid fa-atom text-white text-xl animate-spin" style="animation-duration: 12s;"></i>
                     </div>
                     <div>
-                        <div class="flex items-center gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
                             <span class="px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-md">GDPT 2018 • KNTT</span>
-                            <span class="text-xs text-slate-400 hidden sm:inline">Lớp 12 • Hệ thống hỗ trợ giảng dạy</span>
+                            <span class="text-xs sm:text-sm font-semibold text-teal-300">Thầy Lê Minh Trung - Trường THPT Trần Phú - Hoàn Kiếm</span>
                         </div>
                         <h1 class="text-base sm:text-lg md:text-xl font-bold tracking-tight text-white leading-snug">
                             Cổng Ôn Tập Thi Tốt Nghiệp THPT - Môn Vật Lí
@@ -119,6 +119,10 @@
                 <button onclick="selectTopic(5)" id="nav-pill-5" class="nav-pill shrink-0 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-2 bg-slate-800/70 text-slate-300 hover:bg-slate-700 hover:text-white">
                     <i class="fa-solid fa-flask-vial"></i>
                     <span>CĐ 5: Thí nghiệm & Thực hành</span>
+                </button>
+                <button onclick="selectTopic(6)" id="nav-pill-6" class="nav-pill shrink-0 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-2 bg-amber-600/90 text-white hover:bg-amber-500 shadow-sm">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Tổng hợp (Đề thi THPT)</span>
                 </button>
             </nav>
         </div>
@@ -235,7 +239,7 @@
     <footer class="bg-slate-900 text-slate-400 py-6 mt-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
             <div>
-                <p class="text-slate-200 font-semibold">Hệ thống Hỗ trợ Giáo viên & Học sinh Ôn tập Thi Tốt nghiệp THPT Môn Vật Lí</p>
+                <p class="text-slate-200 font-semibold">Cổng Ôn Tập Thi Tốt Nghiệp THPT Môn Vật Lí • Thầy Lê Minh Trung - Trường THPT Trần Phú - Hoàn Kiếm</p>
                 <p class="mt-0.5">Bám sát Chương trình Giáo dục phổ thông 2018 & Định dạng đề thi minh họa của Bộ GD&ĐT.</p>
             </div>
             <div class="flex items-center gap-4">
@@ -749,6 +753,393 @@
                     { type: "DOCX", title: "Bộ câu hỏi Đúng/Sai xử lý số liệu thí nghiệm & đồ thị", size: "2.1 MB", tag: "Phiếu học tập" },
                     { type: "VIDEO", title: "Tổng hợp hướng dẫn lắp ráp bộ thí nghiệm Vật lí 12 (KNTT)", duration: "15:40", tag: "Video thực hành" }
                 ]
+            },
+            6: {
+                id: 6,
+                title: "Mục Tổng hợp: Đề thi Tốt nghiệp THPT",
+                shortTitle: "Tổng hợp",
+                subtitle: "Tuyển tập đề thi chính thức và đề thi thử Tốt nghiệp THPT môn Vật lí chuẩn cấu trúc 28 câu (50 phút) theo Chương trình GDPT 2018.",
+                icon: "fa-layer-group",
+                isFullExam: true,
+                examMeta: {
+                    examTitle: "KỲ THI TỐT NGHIỆP TRUNG HỌC PHỔ THÔNG NĂM 2025 — MÔN: VẬT LÍ",
+                    examCode: "Mã đề: 0227",
+                    durationMinutes: 50,
+                    constantsNote: "Cho biết: $\\pi = 3,14$; $T(\\text{K}) = t(^\\circ\\text{C}) + 273$; $R = 8,31\\text{ J}\\cdot\\text{mol}^{-1}\\cdot\\text{K}^{-1}$; $N_A = 6,02\\cdot 10^{23}\\text{ hạt/mol}$; $\\ln 2 = 0,693$. Không làm tròn kết quả các phép tính trung gian."
+                },
+                theory: [
+                    {
+                        heading: "Cấu trúc & Thang điểm Đề thi Tốt nghiệp THPT Môn Vật lí (Từ năm 2025)",
+                        content: "Đề thi gồm 28 câu hỏi (40 lệnh hỏi), thời gian làm bài 50 phút, tổng điểm tối đa 10,0 điểm phân bổ theo 3 phần chuẩn của Bộ GD&ĐT:",
+                        formulas: [
+                            {
+                                eq: "$$\\text{Phần I (18 câu)} = 4,5\\text{ điểm} \\quad (0,25\\text{ điểm / câu})$$",
+                                desc: "Câu trắc nghiệm nhiều phương án lựa chọn (4 phương án A, B, C, D, chọn 1 đáp án đúng)."
+                            },
+                            {
+                                eq: "$$\\text{Phần II (4 câu × 4 ý)} = 4,0\\text{ điểm} \\quad (\\text{Tối đa } 1,0\\text{ điểm / câu})$$",
+                                desc: "Chấm điểm lũy tiến trên từng câu: Đúng <strong>1 ý</strong> được <strong>0,10 đ</strong>; đúng <strong>2 ý</strong> được <strong>0,25 đ</strong>; đúng <strong>3 ý</strong> được <strong>0,50 đ</strong>; đúng <strong>4 ý</strong> được <strong>1,00 đ</strong>."
+                            },
+                            {
+                                eq: "$$\\text{Phần III (6 câu)} = 1,5\\text{ điểm} \\quad (0,25\\text{ điểm / câu})$$",
+                                desc: "Câu trắc nghiệm trả lời ngắn: Thí sinh tính toán và điền trực tiếp giá trị số (tối đa 4 kí tự kể cả dấu phẩy/dấu trừ)."
+                            }
+                        ]
+                    },
+                    {
+                        heading: "Danh sách Đề thi đã cập nhật trong mục Tổng hợp",
+                        content: "Hiện có <strong>01 đề thi</strong> đã được số hóa đầy đủ công thức LaTeX, hình vẽ minh họa và lời giải chi tiết:",
+                        formulas: [
+                            {
+                                eq: "$$\\text{Đề số 1: Đề thi chính thức Tốt nghiệp THPT năm 2025 — Mã đề 0227}$$",
+                                desc: "Gồm đủ 18 câu Phần I, 4 câu Đúng/Sai Phần II (có hình vẽ thí nghiệm phễu nước đá và cân từ trường) và 6 câu Trả lời ngắn Phần III. Chuyển sang Tab <strong>2. Luyện đề chuẩn cấu trúc 2025</strong> để làm bài ngay."
+                            }
+                        ]
+                    }
+                ],
+                quiz: {
+                    part1: [
+                        {
+                            id: "th25_0227_p1_1",
+                            question: "Đại lượng đặc trưng cho độ bền vững của hạt nhân là",
+                            options: ["năng lượng liên kết.", "năng lượng liên kết riêng.", "điện tích hạt nhân.", "độ hụt khối của hạt nhân."],
+                            correct: 1,
+                            explanation: "Năng lượng liên kết riêng (tính trên 1 nucleon) càng lớn thì hạt nhân càng bền vững."
+                        },
+                        {
+                            id: "th25_0227_p1_2",
+                            question: "Theo mô hình động học phân tử, giữa các phân tử",
+                            options: [
+                                "có lực tương tác luôn là lực hút.",
+                                "không có lực tương tác.",
+                                "có lực tương tác luôn là lực đẩy.",
+                                "có lực tương tác bao gồm lực hút và lực đẩy."
+                            ],
+                            correct: 3,
+                            explanation: "Giữa các phân tử cấu tạo nên vật luôn tồn tại đồng thời cả lực hút và lực đẩy phân tử."
+                        },
+                        {
+                            id: "th25_0227_p1_3",
+                            question: "Độ lớn suất điện động cảm ứng được xác định bằng định luật nào trong các định luật sau đây?",
+                            options: [
+                                "Định luật Lenz về cảm ứng điện từ.",
+                                "Định luật Coulomb về tương tác điện.",
+                                "Định luật Ohm cho vật dẫn kim loại.",
+                                "Định luật Faraday về cảm ứng điện từ."
+                            ],
+                            correct: 3,
+                            explanation: "Định luật Faraday xác định độ lớn suất điện động cảm ứng tỉ lệ với tốc độ biến thiên từ thông qua mạch kín: $|e_c| = \\left|\\frac{\\Delta \\Phi}{\\Delta t}\\right|$."
+                        },
+                        {
+                            id: "th25_0227_p1_4",
+                            question: "Trong quá trình đẳng nhiệt của một khối khí lí tưởng xác định,",
+                            options: [
+                                "áp suất của khối khí tăng khi thể tích của khối khí tăng.",
+                                "áp suất của khối khí tăng khi thể tích của khối khí giảm.",
+                                "áp suất của khối khí không đổi.",
+                                "thể tích của khối khí không đổi."
+                            ],
+                            correct: 1,
+                            explanation: "Theo định luật Boyle ($pV = \\text{hằng số}$), trong quá trình đẳng nhiệt của một lượng khí xác định, áp suất tỉ lệ nghịch với thể tích nên áp suất tăng khi thể tích giảm."
+                        },
+                        {
+                            id: "th25_0227_p1_5",
+                            question: "Theo mô hình động học phân tử, ở thể khí, các phân tử",
+                            options: [
+                                "chuyển động hỗn loạn.",
+                                "dao động quanh vị trí cân bằng không cố định.",
+                                "chỉ dao động quanh vị trí cân bằng cố định.",
+                                "sắp xếp có trật tự."
+                            ],
+                            correct: 0,
+                            explanation: "Ở thể khí, khoảng cách giữa các phân tử rất lớn nên lực tương tác rất yếu, các phân tử chuyển động nhiệt hỗn loạn không ngừng."
+                        },
+                        {
+                            id: "th25_0227_p1_6",
+                            question: "Khi nói về từ trường, phát biểu nào sau đây là đúng?",
+                            options: [
+                                "Một kim nam châm tạo ra một từ trường đều xung quanh nó.",
+                                "Từ trường tác dụng lực từ lên một điện tích đứng yên ở trong đó.",
+                                "Một dòng điện tạo ra một từ trường đều xung quanh nó.",
+                                "Từ trường tác dụng lực từ lên một nam châm đặt trong đó."
+                            ],
+                            correct: 3,
+                            explanation: "Tính chất cơ bản của từ trường là tác dụng lực từ lên nam châm hoặc dòng điện đặt trong nó."
+                        },
+                        {
+                            id: "th25_0227_p1_7",
+                            question: "Trong kí hiệu hạt nhân $^{A}_{Z}X$, $A$ là số",
+                            options: ["proton.", "neutron.", "positron.", "nucleon."],
+                            correct: 3,
+                            explanation: "Trong kí hiệu hạt nhân $^{A}_{Z}X$, $A$ là số khối (tổng số proton và neutron, gọi chung là số nucleon)."
+                        },
+                        {
+                            id: "th25_0227_p1_8",
+                            question: "Gọi $Q$ là nhiệt lượng cần thiết để làm một lượng chất có khối lượng $m$ chuyển hoàn toàn từ thể rắn sang thể lỏng ở nhiệt độ nóng chảy. Công thức xác định nhiệt nóng chảy riêng của chất này là",
+                            options: ["$\\frac{m}{Q}$.", "$\\frac{Q}{m}$.", "$\\frac{Q}{2m}$.", "$\\frac{2Q}{m}$."],
+                            correct: 1,
+                            explanation: "Nhiệt nóng chảy riêng $\\lambda = \\frac{Q}{m}$ (đơn vị $\\text{J/kg}$)."
+                        },
+                        {
+                            id: "th25_0227_p1_9",
+                            question: "Khi hai vật được đặt tiếp xúc với nhau, năng lượng nhiệt chỉ truyền từ vật này sang vật kia nếu chúng có",
+                            options: [
+                                "khối lượng khác nhau.",
+                                "thể tích khác nhau.",
+                                "nhiệt độ khác nhau.",
+                                "thế năng khác nhau."
+                            ],
+                            correct: 2,
+                            explanation: "Năng lượng nhiệt tự truyền từ vật có nhiệt độ cao hơn sang vật có nhiệt độ thấp hơn."
+                        },
+                        {
+                            id: "th25_0227_p1_10",
+                            question: "Trong nguyên tử lithium, có bao nhiêu electron chuyển động xung quanh hạt nhân $^{7}_{3}\\text{Li}$?",
+                            options: ["$4$.", "$1$.", "$3$.", "$7$."],
+                            correct: 2,
+                            explanation: "Hạt nhân $^{7}_{3}\\text{Li}$ có $Z = 3$ proton nên nguyên tử trung hòa điện có $3$ electron."
+                        },
+                        {
+                            id: "th25_0227_p1_11",
+                            question: "Trong hệ đơn vị SI, đơn vị của từ thông là",
+                            options: ["coulomb ($\\text{C}$).", "tesla ($\\text{T}$).", "volt ($\\text{V}$).", "weber ($\\text{Wb}$)."],
+                            correct: 3,
+                            explanation: "Đơn vị của từ thông trong hệ SI là weber (kí hiệu $\\text{Wb}$)."
+                        },
+                        {
+                            id: "th25_0227_p1_12",
+                            question: "Trong thí nghiệm tán xạ hạt alpha của Rutherford, khi gặp lá vàng mỏng, hầu hết các hạt alpha",
+                            options: [
+                                "bị bật ngược lại.",
+                                "dừng lại.",
+                                "chuyển động theo đường xoắn ốc.",
+                                "đi qua lá vàng."
+                            ],
+                            correct: 3,
+                            explanation: "Hầu hết các hạt alpha xuyên thẳng qua lá vàng mỏng chứng tỏ nguyên tử có cấu tạo rỗng."
+                        },
+                        {
+                            id: "th25_0227_p1_13",
+                            question: "Trong quá trình làm lạnh đẳng tích một khối khí lí tưởng xác định,",
+                            options: [
+                                "áp suất của khối khí tăng.",
+                                "áp suất của khối khí giảm.",
+                                "khối lượng riêng của khí tăng.",
+                                "khối lượng riêng của khí giảm."
+                            ],
+                            correct: 1,
+                            explanation: "Trong quá trình đẳng tích ($V = \\text{hằng số}$), áp suất $p$ tỉ lệ thuận với nhiệt độ tuyệt đối $T$. Khi làm lạnh ($T$ giảm) thì áp suất giảm."
+                        },
+                        {
+                            id: "th25_0227_p1_14",
+                            question: "Trong hệ đơn vị SI, đơn vị của nhiệt dung riêng là",
+                            options: ["$\\text{J}/^\\circ\\text{C}$.", "$\\text{J/kg}$.", "$\\text{J/K}$.", "$\\text{J/(kg.K)}$."],
+                            correct: 3,
+                            explanation: "Từ công thức $c = \\frac{Q}{m\\Delta T}$, đơn vị SI của nhiệt dung riêng là $\\text{J/(kg.K)}$."
+                        },
+                        {
+                            id: "th25_0227_p1_15",
+                            question: "Nội năng của một vật xác định không đổi khi",
+                            options: [
+                                "thể tích của vật thay đổi.",
+                                "nhiệt độ của vật thay đổi.",
+                                "nhiệt độ và thể tích của vật không đổi.",
+                                "vật truyền năng lượng nhiệt cho vật khác."
+                            ],
+                            correct: 2,
+                            explanation: "Nội năng của một vật phụ thuộc vào nhiệt độ và thể tích của vật. Khi nhiệt độ và thể tích không đổi thì nội năng không đổi."
+                        },
+                        {
+                            id: "th25_0227_p1_16",
+                            question: "Một đoạn dây dẫn thẳng có chiều dài $\\ell$ mang dòng điện có cường độ $I$ được đặt trong từ trường đều với góc hợp bởi chiều dòng điện và chiều cảm ứng từ của từ trường là $\\alpha$. Lực từ do từ trường này tác dụng lên đoạn dây có độ lớn là $F$. Độ lớn cảm ứng từ $B$ của từ trường là",
+                            options: [
+                                "$B = \\frac{F}{I\\ell\\sin\\alpha}$.",
+                                "$B = \\frac{F}{I\\ell\\cot\\alpha}$.",
+                                "$B = \\frac{F}{I\\ell\\tan\\alpha}$.",
+                                "$B = \\frac{F}{I\\ell\\cos\\alpha}$."
+                            ],
+                            correct: 0,
+                            explanation: "Từ công thức lực từ $F = BI\\ell\\sin\\alpha \\Rightarrow B = \\frac{F}{I\\ell\\sin\\alpha}$."
+                        },
+                        {
+                            id: "th25_0227_p1_17",
+                            question: "Công thức định luật 1 của nhiệt động lực học là $\\Delta U = A + Q$, với $Q$ là kí hiệu nhiệt lượng và $A$ là kí hiệu",
+                            options: ["công.", "nội năng.", "nhiệt dung riêng.", "nhiệt độ."],
+                            correct: 0,
+                            explanation: "Trong biểu thức $\\Delta U = A + Q$: $\\Delta U$ là độ biến thiên nội năng, $A$ là công và $Q$ là nhiệt lượng."
+                        },
+                        {
+                            id: "th25_0227_p1_18",
+                            question: "Khi đúc một vật bằng đồng, quá trình đồng chuyển từ thể lỏng thành thể rắn là quá trình",
+                            options: ["đông đặc.", "ngưng tụ.", "nóng chảy.", "hoá hơi."],
+                            correct: 0,
+                            explanation: "Sự chuyển từ thể lỏng sang thể rắn gọi là sự đông đặc."
+                        }
+                    ],
+                    part2List: [
+                        {
+                            id: "th25_0227_p2_1",
+                            label: "Câu 1",
+                            context: "Các quá trình biến đổi hạt nhân là cơ sở của nhiều ứng dụng.",
+                            statements: [
+                                {
+                                    text: "a) Phản ứng phân hạch là phản ứng tỏa năng lượng.",
+                                    correct: true,
+                                    explanation: "Đúng. Phản ứng phân hạch hạt nhân nặng (như $^{235}\\text{U}$) tỏa ra năng lượng rất lớn."
+                                },
+                                {
+                                    text: "b) Phóng xạ là quá trình tự phát và ngẫu nhiên.",
+                                    correct: true,
+                                    explanation: "Đúng. Hiện tượng phóng xạ xảy ra hoàn toàn tự phát, không chịu tác động của các yếu tố bên ngoài và mang tính ngẫu nhiên."
+                                },
+                                {
+                                    text: "c) Phản ứng nhiệt hạch là phản ứng thu năng lượng.",
+                                    correct: false,
+                                    explanation: "Sai. Phản ứng nhiệt hạch (tổng hợp hạt nhân nhẹ) là phản ứng tỏa năng lượng."
+                                },
+                                {
+                                    text: "d) Hạt nhân uranium $^{238}_{92}\\text{U}$ phóng xạ $\\alpha$ và biến đổi thành hạt nhân thorium $^{234}_{90}\\text{Th}$.",
+                                    correct: true,
+                                    explanation: "Đúng. Phương trình phân rã: $^{238}_{92}\\text{U} \\rightarrow ^{4}_{2}\\text{He} + ^{234}_{90}\\text{Th}$."
+                                }
+                            ]
+                        },
+                        {
+                            id: "th25_0227_p2_2",
+                            label: "Câu 2",
+                            context: "Một nhóm học sinh thảo luận phương án thí nghiệm làm giảm ảnh hưởng của sự trao đổi nhiệt với môi trường khi đo nhiệt nóng chảy riêng của nước đá. Họ dùng các dụng cụ: Phễu chứa nước đá (1), dây điện trở (2), cốc (3), cân điện tử (4) như hình bên.<br>Nhóm học sinh cho rằng: <em>Trong thời gian cấp điện cho dây điện trở, nếu xác định được càng chính xác khối lượng nước đá tan chảy vào cốc do nhiệt lượng nhận từ môi trường thì sẽ giảm được càng nhiều ảnh hưởng của sự trao đổi nhiệt giữa nước đá với môi trường.</em><br>Phương án thí nghiệm của họ gồm hai giai đoạn và được tóm tắt như sau:<br><strong>Giai đoạn 1.</strong> Chưa cấp điện cho dây điện trở: Xác định khối lượng $m_1$ của nước đá tan và đã chảy từ phễu vào cốc trong khoảng thời gian $t_1$.<br><strong>Giai đoạn 2.</strong> Cấp điện cho dây điện trở: Xác định khối lượng $m_2$ của nước đá tan và đã chảy từ phễu vào cốc trong khoảng thời gian $t_2$.<br>Ở cả hai giai đoạn, coi rằng khối lượng nước đá tan và đã chảy vào cốc do nhiệt lượng nhận từ môi trường trong những khoảng thời gian bằng nhau là như nhau và bỏ qua các ảnh hưởng khác (bay hơi, ngưng tụ của nước...).",
+                            svg: `<svg viewBox="0 0 220 220" class="w-44 h-44 mx-auto bg-white rounded-lg border border-slate-200 p-2 shrink-0"><rect x="20" y="190" width="160" height="8" fill="#475569"/><rect x="35" y="15" width="6" height="175" fill="#475569"/><rect x="35" y="42" width="65" height="5" fill="#475569"/><polygon points="80,22 155,22 123,90 112,90" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/><line x1="112" y1="90" x2="112" y2="116" stroke="#0284c7" stroke-width="2"/><line x1="123" y1="90" x2="123" y2="112" stroke="#0284c7" stroke-width="2"/><rect x="96" y="30" width="16" height="14" fill="#bae6fd" stroke="#0369a1"/><rect x="116" y="28" width="18" height="15" fill="#bae6fd" stroke="#0369a1"/><rect x="104" y="48" width="22" height="14" fill="#bae6fd" stroke="#0369a1"/><path d="M 105 70 Q 117 78 128 70" fill="none" stroke="#dc2626" stroke-width="2.5"/><line x1="128" y1="70" x2="165" y2="70" stroke="#dc2626" stroke-width="1.5"/><line x1="105" y1="70" x2="165" y2="62" stroke="#dc2626" stroke-width="1.5"/><circle cx="117" cy="124" r="2.5" fill="#0284c7"/><polyline points="95,130 95,167 140,167 140,130" fill="none" stroke="#334155" stroke-width="2"/><rect x="96" y="151" width="43" height="15" fill="#bae6fd" opacity="0.7"/><rect x="82" y="168" width="70" height="22" rx="3" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/><rect x="96" y="173" width="42" height="11" fill="#f8fafc" stroke="#64748b"/><text x="117" y="182" font-size="8" font-family="monospace" text-anchor="middle" fill="#0f172a">8888</text><text x="168" y="38" font-size="11" font-weight="bold" fill="#0f172a">(1)</text><text x="168" y="71" font-size="11" font-weight="bold" fill="#dc2626">(2)</text><text x="148" y="150" font-size="11" font-weight="bold" fill="#0f172a">(3)</text><text x="158" y="183" font-size="11" font-weight="bold" fill="#0f172a">(4)</text></svg>`,
+                            statements: [
+                                {
+                                    text: "a) Ở giai đoạn 1, nước đá tan do nhận nhiệt lượng từ môi trường.",
+                                    correct: true,
+                                    explanation: "Đúng. Ở giai đoạn 1 chưa cấp điện cho dây điện trở nên nước đá tan hoàn toàn do nhận nhiệt lượng từ môi trường xung quanh."
+                                },
+                                {
+                                    text: "b) Ở giai đoạn 2, nước đá tan do nhận nhiệt lượng từ dây điện trở và từ môi trường.",
+                                    correct: true,
+                                    explanation: "Đúng. Ở giai đoạn 2 vừa cấp điện cho dây điện trở vừa đặt trong môi trường nên nước đá nhận nhiệt từ cả hai nguồn này."
+                                },
+                                {
+                                    text: "c) Nếu $t_2 = t_1$ thì có thể coi khối lượng của nước đá tan do nhận nhiệt lượng từ dây điện trở là $m = m_2 - m_1$.",
+                                    correct: true,
+                                    explanation: "Đúng. Vì trong cùng khoảng thời gian $t_2 = t_1$, lượng nước đá tan do môi trường là như nhau và bằng $m_1$, nên lượng tan do dây điện trở là $m = m_2 - m_1$."
+                                },
+                                {
+                                    text: "d) Phương án thí nghiệm này là một trong những phương án có thể làm giảm được ảnh hưởng của sự trao đổi nhiệt với môi trường đến kết quả thí nghiệm.",
+                                    correct: true,
+                                    explanation: "Đúng. Việc đo trừ đi phần khối lượng nước đá tan do môi trường giúp loại bỏ đáng kể sai số hệ thống do trao đổi nhiệt với môi trường."
+                                }
+                            ]
+                        },
+                        {
+                            id: "th25_0227_p2_3",
+                            label: "Câu 3",
+                            context: "Một nam châm được đặt trên cân. Một đoạn dây dẫn cứng được giữ cố định, nằm ngang, vuông góc với các đường sức từ của từ trường đều giữa hai cực của nam châm (hình bên). Cảm ứng từ $\\vec{B}$ của từ trường có phương nằm ngang và có độ lớn là $B$. Chiều dài của phần dây dẫn $PQ$ nằm trong vùng từ trường đều giữa hai cực của nam châm là $\\ell$. Ban đầu, chưa có dòng điện chạy trong dây dẫn, cân chỉ một giá trị xác định. Sau đó, cho dòng điện không đổi với cường độ $I$ chạy trong dây dẫn theo chiều từ $P$ đến $Q$. Bỏ qua ảnh hưởng của từ trường Trái Đất.",
+                            svg: `<svg viewBox="0 0 220 185" class="w-44 h-40 mx-auto bg-white rounded-lg border border-slate-200 p-2 shrink-0"><path d="M 65 40 L 65 130 L 155 130 L 155 40 L 130 40 L 130 105 L 90 105 L 90 40 Z" fill="#64748b" stroke="#1e293b" stroke-width="1.5"/><rect x="65" y="40" width="25" height="35" fill="#94a3b8" stroke="#1e293b"/><rect x="130" y="40" width="25" height="35" fill="#475569" stroke="#1e293b"/><text x="77" y="62" font-size="12" font-weight="bold" text-anchor="middle" fill="#0f172a">S</text><text x="142" y="62" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">N</text><line x1="125" y1="50" x2="95" y2="80" stroke="#d97706" stroke-width="4" stroke-linecap="round"/><text x="85" y="83" font-size="11" font-weight="bold" fill="#b45309">P</text><text x="128" y="47" font-size="11" font-weight="bold" fill="#b45309">Q</text><rect x="45" y="131" width="130" height="32" rx="4" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/><rect x="75" y="138" width="70" height="16" fill="#f8fafc" stroke="#64748b"/><text x="110" y="150" font-size="10" font-family="monospace" text-anchor="middle" fill="#0f172a">888.8 g</text></svg>`,
+                            statements: [
+                                {
+                                    text: "a) Cảm ứng từ $\\vec{B}$ có hướng từ cực $\\text{N}$ sang cực $\\text{S}$ của nam châm.",
+                                    correct: true,
+                                    explanation: "Đúng. Đường sức từ bên ngoài nam châm đi ra từ cực Bắc ($\\text{N}$) và đi vào cực Nam ($\\text{S}$)."
+                                },
+                                {
+                                    text: "b) Cân chỉ giá trị nhỏ hơn giá trị ban đầu.",
+                                    correct: false,
+                                    explanation: "Sai. Áp dụng quy tắc bàn tay trái (cảm ứng từ $\\vec{B}$ hướng từ $\\text{N}$ sang $\\text{S}$, dòng điện từ $P$ vào $Q$), lực từ tác dụng lên đoạn dây $PQ$ hướng thẳng đứng lên trên. Theo định luật III Newton, đoạn dây tác dụng phản lực lên nam châm hướng thẳng đứng xuống dưới, làm số chỉ của cân TĂNG lên."
+                                },
+                                {
+                                    text: "c) Lực từ do từ trường tác dụng lên đoạn dây $PQ$ hướng thẳng đứng lên trên.",
+                                    correct: true,
+                                    explanation: "Đúng. Theo quy tắc bàn tay trái, lực từ tác dụng lên đoạn dây $PQ$ hướng thẳng đứng lên trên."
+                                },
+                                {
+                                    text: "d) Lực từ do từ trường tác dụng lên đoạn dây $PQ$ có độ lớn là $BI\\ell$.",
+                                    correct: true,
+                                    explanation: "Đúng. Vì dây dẫn vuông góc với đường sức từ ($\\alpha = 90^\\circ$) nên $F = BI\\ell\\sin 90^\\circ = BI\\ell$."
+                                }
+                            ]
+                        },
+                        {
+                            id: "th25_0227_p2_4",
+                            label: "Câu 4",
+                            context: "Sóng điện từ được ứng dụng nhiều trong thông tin liên lạc.",
+                            statements: [
+                                {
+                                    text: "a) Không thể tạo ra hiện tượng giao thoa đối với sóng điện từ.",
+                                    correct: false,
+                                    explanation: "Sai. Sóng điện từ mang đầy đủ tính chất của sóng như phản xạ, khúc xạ, giao thoa, nhiễu xạ."
+                                },
+                                {
+                                    text: "b) Giả sử tại một điểm có sóng điện từ truyền qua theo phương thẳng đứng hướng lên, nếu cảm ứng từ có hướng bắc - nam thì cường độ điện trường có hướng đông - tây.",
+                                    correct: true,
+                                    explanation: "Đúng. Ba vectơ $\\vec{E}$, $\\vec{B}$, $\\vec{v}$ tại một điểm luôn đôi một vuông góc với nhau theo quy tắc tam diện thuận."
+                                },
+                                {
+                                    text: "c) Sóng điện từ là sóng dọc.",
+                                    correct: false,
+                                    explanation: "Sai. Sóng điện từ là sóng ngang."
+                                },
+                                {
+                                    text: "d) Tại một điểm có sóng điện từ truyền qua, cường độ điện trường và cảm ứng từ luôn dao động cùng pha.",
+                                    correct: true,
+                                    explanation: "Đúng. Trong sóng điện từ, dao động của điện trường và từ trường tại một điểm luôn đồng pha với nhau."
+                                }
+                            ]
+                        }
+                    ],
+                    part3: [
+                        {
+                            id: "th25_0227_p3_1",
+                            context: "<strong>Dùng thông tin sau cho câu 1 và câu 2:</strong> Một khung dây dẫn phẳng, kín có diện tích $2,25 \\cdot 10^{-4}\\text{ m}^2$, gồm $26$ vòng dây được đặt trong từ trường đều sao cho cảm ứng từ $\\vec{B}$ vuông góc với mặt phẳng khung dây. Trong $0,810\\text{ s}$, độ lớn cảm ứng từ của từ trường tăng đều từ $0,100\\text{ T}$ đến $0,550\\text{ T}$.",
+                            question: "Độ lớn suất điện động cảm ứng trong khung dây là $x \\cdot 10^{-3}\\text{ V}$. Tìm $x$ (làm tròn kết quả đến chữ số hàng phần trăm).",
+                            answer: "3.25",
+                            tolerance: 0.01,
+                            explanation: "Độ lớn suất điện động cảm ứng: $|e_c| = N S \\frac{|\\Delta B|}{\\Delta t} = 26 \\cdot 2,25 \\cdot 10^{-4} \\cdot \\frac{0,550 - 0,100}{0,810} = 3,25 \\cdot 10^{-3}\\text{ V} \\Rightarrow x = 3,25$."
+                        },
+                        {
+                            id: "th25_0227_p3_2",
+                            question: "Biết điện trở của khung dây là $0,260\\text{ }\\Omega$. Nhiệt lượng tỏa ra trên khung dây dẫn trong khoảng thời gian từ trường biến thiên là $x \\cdot 10^{-5}\\text{ J}$. Tìm $x$ (làm tròn kết quả đến chữ số hàng phần trăm).",
+                            answer: "3.29",
+                            tolerance: 0.02,
+                            explanation: "Nhiệt lượng tỏa ra: $Q = \\frac{e_c^2}{R} \\Delta t = \\frac{(3,25 \\cdot 10^{-3})^2}{0,260} \\cdot 0,810 \\approx 3,2906 \\cdot 10^{-5}\\text{ J} \\Rightarrow x \\approx 3,29$."
+                        },
+                        {
+                            id: "th25_0227_p3_3",
+                            context: "<strong>Dùng thông tin sau cho câu 3 và câu 4:</strong> Trong các trạm không gian vũ trụ, cần thu hồi khí oxygen $\\text{O}_2$ từ khí carbon dioxide $\\text{CO}_2$ do các nhà du hành thở ra để tái sử dụng. Trong một phương pháp thu hồi, cứ $1,00\\text{ mol}$ $\\text{CO}_2$ tạo ra $1,00\\text{ mol}$ $\\text{O}_2$ và $1,00\\text{ mol}$ methane $\\text{CH}_4$. Sau một thời gian, lượng khí $\\text{CO}_2$ thu được là $0,460\\text{ kg}$. Khí $\\text{CH}_4$ và $\\text{O}_2$ tạo thành từ lượng $\\text{CO}_2$ nói trên được chứa trong hai bình khác nhau ban đầu đều chưa chứa khí. Khối lượng mol của $\\text{CO}_2$ và $\\text{O}_2$ lần lượt là $44,0\\text{ g/mol}$ và $32,0\\text{ g/mol}$. Coi các khí là khí lí tưởng.",
+                            question: "Bình chứa khí $\\text{CH}_4$ có thể tích $135\\text{ lít}$ và được duy trì ở nhiệt độ $-43^\\circ\\text{C}$. Áp suất của khí $\\text{CH}_4$ trong bình là $x \\cdot 10^5\\text{ Pa}$. Tìm $x$ (làm tròn kết quả đến chữ số hàng phần trăm).",
+                            answer: "1.48",
+                            tolerance: 0.01,
+                            explanation: "Số mol $\\text{CH}_4$ tạo thành bằng số mol $\\text{CO}_2$: $n = \\frac{460}{44,0} = \\frac{115}{11}\\text{ mol}$. Nhiệt độ $T = -43 + 273 = 230\\text{ K}$. Áp suất: $p = \\frac{nRT}{V} = \\frac{\\frac{115}{11} \\cdot 8,31 \\cdot 230}{135 \\cdot 10^{-3}} \\approx 1,4805 \\cdot 10^5\\text{ Pa} \\Rightarrow x \\approx 1,48$."
+                        },
+                        {
+                            id: "th25_0227_p3_4",
+                            question: "Khi một lượng khí $\\text{O}_2$ được rút ra để sử dụng thì áp suất khí trong bình chứa khí $\\text{O}_2$ bằng $54\\%$ áp suất khí khi chưa rút, nhiệt độ của bình khí không đổi. Khối lượng $\\text{O}_2$ đã rút ra khỏi bình là bao nhiêu kilôgam (làm tròn kết quả đến chữ số hàng phần trăm)?",
+                            answer: "0.15",
+                            tolerance: 0.01,
+                            explanation: "Khối lượng $\\text{O}_2$ ban đầu: $m_0 = n \\cdot M_{\\text{O}_2} = \\frac{460}{44,0} \\cdot 32,0 \\approx 334,55\\text{ g} = 0,33455\\text{ kg}$. Vì $V, T$ không đổi nên khối lượng tỉ lệ thuận với áp suất: phần trăm khí đã rút ra là $100\\% - 54\\% = 46\\%$. Khối lượng $\\text{O}_2$ đã rút: $\\Delta m = 0,46 \\cdot 0,33455 \\approx 0,1539\\text{ kg} \\approx 0,15\\text{ kg}$."
+                        },
+                        {
+                            id: "th25_0227_p3_5",
+                            context: "<strong>Dùng thông tin sau cho câu 5 và câu 6:</strong> Trước đây, để thuận tiện cho việc xem giờ, các nhà sản xuất đồng hồ đã sơn mặt số và kim của đồng hồ bằng một lớp dạ quang chứa đồng vị phóng xạ radium $^{226}_{88}\\text{Ra}$ có chu kì bán rã là $1600\\text{ năm}$. Ban đầu, lớp dạ quang này chứa $8,5\\text{ }\\mu\\text{g}$ $^{226}_{88}\\text{Ra}$. Lấy số ngày trong một năm là $365$. Khối lượng mol của $^{226}_{88}\\text{Ra}$ là $226\\text{ g/mol}$.",
+                            question: "Độ phóng xạ ban đầu của lượng $^{226}_{88}\\text{Ra}$ được sơn trên đồng hồ là bao nhiêu megabecoren ($\\text{MBq}$, làm tròn kết quả đến chữ số hàng phần trăm)?",
+                            answer: "0.31",
+                            tolerance: 0.01,
+                            explanation: "Số hạt nhân ban đầu: $N_0 = \\frac{8,5 \\cdot 10^{-6}}{226} \\cdot 6,02 \\cdot 10^{23} \\approx 2,2642 \\cdot 10^{16}\\text{ hạt}$. Hằng số phóng xạ: $\\lambda = \\frac{\\ln 2}{T} = \\frac{0,693}{1600 \\cdot 365 \\cdot 86400} \\approx 1,3734 \\cdot 10^{-11}\\text{ s}^{-1}$. Độ phóng xạ ban đầu: $H_0 = \\lambda N_0 \\approx 3,1097 \\cdot 10^5\\text{ Bq} \\approx 0,31\\text{ MBq}$."
+                        },
+                        {
+                            id: "th25_0227_p3_6",
+                            question: "Sau bao nhiêu năm thì độ phóng xạ của lượng $^{226}_{88}\\text{Ra}$ còn lại bằng $3,125\\%$ so với độ phóng xạ ban đầu (làm tròn kết quả đến chữ số hàng đơn vị)?",
+                            answer: "8000",
+                            tolerance: 1,
+                            explanation: "Ta có $\\frac{H}{H_0} = 3,125\\% = 0,03125 = \\frac{1}{32} = 2^{-5} \\Rightarrow \\frac{t}{T} = 5 \\Rightarrow t = 5 \\cdot 1600 = 8000\\text{ năm}$."
+                        }
+                    ]
+                },
+                resources: [
+                    { type: "PDF", title: "Đề thi chính thức Tốt nghiệp THPT 2025 - Môn Vật lí (Mã đề 0227)", size: "1.8 MB", tag: "Đề chính thức Bộ GD&ĐT" },
+                    { type: "DOCX", title: "Hướng dẫn giải chi tiết 28 câu Mã đề 0227 (Chuẩn GDPT 2018)", size: "1.3 MB", tag: "Đáp án & Lời giải" }
+                ]
             }
         };
 
@@ -899,10 +1290,14 @@
         }
 
         function renderHeaderNav() {
-            for (let i = 1; i <= 5; i++) {
+            const totalItems = Object.keys(curriculumData).length;
+            for (let i = 1; i <= totalItems; i++) {
                 const pill = document.getElementById(`nav-pill-${i}`);
+                if (!pill) continue;
                 if (i === appState.currentTopicId) {
                     pill.className = "nav-pill shrink-0 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-teal-600 text-white shadow-sm ring-2 ring-teal-400/50";
+                } else if (i === 6) {
+                    pill.className = "nav-pill shrink-0 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-2 bg-amber-600/85 text-white hover:bg-amber-500";
                 } else {
                     pill.className = "nav-pill shrink-0 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-2 bg-slate-800/70 text-slate-300 hover:bg-slate-700 hover:text-white";
                 }
@@ -911,7 +1306,8 @@
 
         function renderTopicBanner() {
             const topic = curriculumData[appState.currentTopicId];
-            document.getElementById('topic-badge').textContent = `Chuyên đề ${topic.id} / 5`;
+            const totalItems = Object.keys(curriculumData).length;
+            document.getElementById('topic-badge').textContent = topic.isFullExam ? `Mục Tổng hợp • Đề thi chuẩn 2025` : `Chuyên đề ${topic.id} / 5`;
             document.getElementById('topic-title').textContent = topic.title;
             document.getElementById('topic-subtitle').textContent = topic.subtitle;
 
@@ -923,7 +1319,7 @@
             if (isCompleted) {
                 btn.className = "px-4 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-2 bg-emerald-500 text-white shadow-md hover:bg-emerald-600";
                 icon.className = "fa-solid fa-circle-check";
-                text.textContent = "Đã hoàn thành chuyên đề";
+                text.textContent = "Đã hoàn thành mục này";
             } else {
                 btn.className = "px-4 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25";
                 icon.className = "fa-regular fa-circle-check";
@@ -998,7 +1394,7 @@
             html += `
                 <div class="flex justify-end pt-2">
                     <button onclick="switchTab('quiz')" class="px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white font-semibold rounded-xl text-sm shadow-sm transition-all flex items-center gap-2">
-                        <span>Chuyển sang Luyện đề chuyên đề này</span>
+                        <span>${topic.isFullExam ? 'Bắt đầu làm Đề thi Tốt nghiệp 2025 (Mã 0227)' : 'Chuyển sang Luyện đề chuyên đề này'}</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
@@ -1006,14 +1402,78 @@
             return html;
         }
 
+        // Đồng hồ làm bài 50 phút cho đề thi tổng hợp
+        let examTimerInterval = null;
+        let examSecondsLeft = 50 * 60;
+
+        function startExamCountdown(topicId) {
+            if (examTimerInterval) clearInterval(examTimerInterval);
+            examSecondsLeft = 50 * 60;
+            updateExamClockUI();
+            examTimerInterval = setInterval(() => {
+                const ans = appState.userAnswers[topicId];
+                if (ans && ans.submitted) {
+                    clearInterval(examTimerInterval);
+                    return;
+                }
+                examSecondsLeft--;
+                if (examSecondsLeft <= 0) {
+                    clearInterval(examTimerInterval);
+                    examSecondsLeft = 0;
+                    updateExamClockUI();
+                    showToast('Hết thời gian 50 phút! Hệ thống tự động nộp bài.', 'warning');
+                    submitQuiz(topicId);
+                    return;
+                }
+                updateExamClockUI();
+            }, 1000);
+        }
+
+        function updateExamClockUI() {
+            const el = document.getElementById('exam-live-timer');
+            if (!el) return;
+            const m = Math.floor(examSecondsLeft / 60);
+            const s = examSecondsLeft % 60;
+            el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+
         // --- TAB 2: LUYỆN ĐỀ CHUẨN CẤU TRÚC MỚI (3 PHẦN) ---
         function renderQuizHTML(topic) {
             const qData = topic.quiz;
             const topicAns = appState.userAnswers[topic.id] || { part1: {}, part2: {}, part3: {}, submitted: false };
 
-            let html = `
-                <div class="space-y-8">
-                    <!-- Hướng dẫn cấu trúc đề -->
+            let html = `<div class="space-y-8">`;
+
+            if (topic.isFullExam && topic.examMeta) {
+                html += `
+                    <div class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white rounded-2xl p-5 border border-blue-800 shadow-md space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700/80 pb-3">
+                            <div>
+                                <span class="px-2.5 py-0.5 text-xs font-bold bg-amber-500 text-slate-950 rounded-md uppercase">${topic.examMeta.examCode}</span>
+                                <h3 class="text-base sm:text-lg font-extrabold mt-1.5 text-white">${topic.examMeta.examTitle}</h3>
+                                <p class="text-xs text-slate-300 mt-0.5">Thời gian làm bài: ${topic.examMeta.durationMinutes} phút • Biên soạn trên web: Thầy Lê Minh Trung - THPT Trần Phú - Hoàn Kiếm</p>
+                            </div>
+                            <div class="flex items-center gap-2 shrink-0">
+                                <div class="bg-slate-800 border border-slate-600 rounded-xl px-3.5 py-2 text-center">
+                                    <span class="text-[10px] uppercase text-teal-300 block font-semibold">Thời gian còn lại</span>
+                                    <span id="exam-live-timer" class="font-mono text-lg font-extrabold text-amber-400">50:00</span>
+                                </div>
+                                ${!topicAns.submitted ? `
+                                    <button type="button" onclick="startExamCountdown(${topic.id}); showToast('Đã bắt đầu tính giờ 50 phút!', 'info');" class="px-3 py-2.5 bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold rounded-xl transition-all">
+                                        <i class="fa-solid fa-stopwatch mr-1"></i> Bấm giờ
+                                    </button>
+                                ` : `
+                                    <button type="button" onclick="resetQuiz(${topic.id})" class="px-3 py-2.5 bg-white text-slate-900 hover:bg-slate-100 text-xs font-bold rounded-xl transition-all">
+                                        <i class="fa-solid fa-rotate-right mr-1"></i> Làm lại
+                                    </button>
+                                `}
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">${topic.examMeta.constantsNote}</p>
+                    </div>
+                `;
+            } else {
+                html += `
                     <div class="bg-blue-50/80 border border-blue-200 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div class="text-xs sm:text-sm text-blue-950">
                             <span class="font-bold block sm:inline"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i>Định dạng đề thi Tốt nghiệp THPT từ năm 2025:</span>
@@ -1025,13 +1485,16 @@
                             </button>
                         ` : ''}
                     </div>
+                `;
+            }
 
-                    <!-- PHẦN I: TRẮC NGHIỆM NHIỀU LỰA CHỌN -->
-                    <div class="space-y-4">
-                        <div class="border-b border-slate-200 pb-2">
-                            <h3 class="font-bold text-blue-950 text-base uppercase tracking-wide">Phần I. Câu trắc nghiệm nhiều phương án lựa chọn</h3>
-                            <p class="text-xs text-slate-500">Mỗi câu hỏi thí sinh chỉ chọn một phương án đúng nhất.</p>
-                        </div>
+            // --- PHẦN I: TRẮC NGHIỆM NHIỀU LỰA CHỌN ---
+            html += `
+                <div class="space-y-4">
+                    <div class="border-b border-slate-200 pb-2">
+                        <h3 class="font-bold text-blue-950 text-base uppercase tracking-wide">Phần I. Câu trắc nghiệm nhiều phương án lựa chọn</h3>
+                        <p class="text-xs text-slate-500">Thí sinh trả lời từ câu 1 đến câu ${qData.part1.length}. Mỗi câu hỏi thí sinh chỉ chọn một phương án.</p>
+                    </div>
             `;
 
             qData.part1.forEach((q, idx) => {
@@ -1084,67 +1547,85 @@
 
             html += `</div>`;
 
-            // --- PHẦN II: TRẮC NGHIỆM ĐÚNG / SAI ---
-            const p2 = qData.part2;
+            // --- PHẦN II: TRẮC NGHIỆM ĐÚNG / SAI (Hỗ trợ cả 1 câu hoặc nhiều câu part2List) ---
+            const p2Items = qData.part2List ? qData.part2List : [qData.part2];
             html += `
                 <div class="space-y-4">
                     <div class="border-b border-slate-200 pb-2">
-                        <h3 class="font-bold text-blue-950 text-base uppercase tracking-wide">Phần II. Câu trắc nghiệm đúng sai (Tích hợp thí nghiệm thực tế)</h3>
-                        <p class="text-xs text-slate-500">Trong mỗi ý a), b), c), d), thí sinh chọn Đúng hoặc Sai.</p>
+                        <h3 class="font-bold text-blue-950 text-base uppercase tracking-wide">Phần II. Câu trắc nghiệm đúng sai</h3>
+                        <p class="text-xs text-slate-500">Thí sinh trả lời từ câu 1 đến câu ${p2Items.length}. Trong mỗi ý a), b), c), d) ở mỗi câu, thí sinh chọn đúng hoặc sai.</p>
                     </div>
-                    <div class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-sm space-y-4">
-                        <div class="bg-amber-50/70 border-l-4 border-amber-500 p-3.5 rounded-r-xl text-sm text-slate-800 leading-relaxed">
-                            <span class="font-bold text-amber-900 block mb-1"><i class="fa-solid fa-flask mr-1"></i>Bối cảnh thí nghiệm:</span>
-                            ${p2.context}
-                        </div>
-                        <div class="divide-y divide-slate-100">
             `;
 
-            p2.statements.forEach((st, stIdx) => {
-                const userVal = topicAns.part2[stIdx]; // true, false, or undefined
+            p2Items.forEach((p2, p2Idx) => {
                 html += `
-                    <div class="py-3.5 first:pt-1 last:pb-1">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                            <p class="text-sm text-slate-800 leading-relaxed flex-1">${st.text}</p>
-                            <div class="flex items-center gap-2 shrink-0">
-                                <button type="button" ${topicAns.submitted ? 'disabled' : ''} onclick="selectPart2(${topic.id}, ${stIdx}, true)" class="px-3.5 py-1.5 rounded-lg text-xs font-bold border transition-all ${
-                                    userVal === true 
-                                    ? 'bg-blue-800 text-white border-blue-800 shadow-sm' 
-                                    : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
-                                }">Đúng</button>
-                                <button type="button" ${topicAns.submitted ? 'disabled' : ''} onclick="selectPart2(${topic.id}, ${stIdx}, false)" class="px-3.5 py-1.5 rounded-lg text-xs font-bold border transition-all ${
-                                    userVal === false 
-                                    ? 'bg-blue-800 text-white border-blue-800 shadow-sm' 
-                                    : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
-                                }">Sai</button>
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-sm space-y-4">
+                        <div class="bg-amber-50/70 border-l-4 border-amber-500 p-3.5 rounded-r-xl text-sm text-slate-800 leading-relaxed flex flex-col md:flex-row gap-4 items-start justify-between">
+                            <div class="flex-1">
+                                <span class="font-bold text-amber-900 block mb-1">${p2.label ? p2.label + ':' : '<i class="fa-solid fa-flask mr-1"></i>Bối cảnh thí nghiệm:'}</span>
+                                <div>${p2.context}</div>
                             </div>
+                            ${p2.svg ? p2.svg : ''}
                         </div>
+                        <div class="divide-y divide-slate-100">
                 `;
-                if (topicAns.submitted) {
-                    const isRight = userVal === st.correct;
+
+                p2.statements.forEach((st, stIdx) => {
+                    const ansKey = `${p2.id}_${stIdx}`;
+                    const userVal = qData.part2List ? topicAns.part2[ansKey] : topicAns.part2[stIdx];
                     html += `
-                        <div class="mt-2 p-2.5 rounded-lg text-xs ${isRight ? 'bg-emerald-50 text-emerald-900 border border-emerald-200' : 'bg-rose-50 text-rose-900 border border-rose-200'}">
-                            <span class="font-bold mr-1">${isRight ? '<i class="fa-solid fa-check"></i> Chính xác!' : '<i class="fa-solid fa-xmark"></i> Chưa chính xác!'}</span>
-                            <span>${st.explanation}</span>
-                        </div>
+                        <div class="py-3.5 first:pt-1 last:pb-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                <p class="text-sm text-slate-800 leading-relaxed flex-1">${st.text}</p>
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <button type="button" ${topicAns.submitted ? 'disabled' : ''} onclick="selectPart2(${topic.id}, '${ansKey}', ${stIdx}, true)" class="px-3.5 py-1.5 rounded-lg text-xs font-bold border transition-all ${
+                                        userVal === true 
+                                        ? 'bg-blue-800 text-white border-blue-800 shadow-sm' 
+                                        : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
+                                    }">Đúng</button>
+                                    <button type="button" ${topicAns.submitted ? 'disabled' : ''} onclick="selectPart2(${topic.id}, '${ansKey}', ${stIdx}, false)" class="px-3.5 py-1.5 rounded-lg text-xs font-bold border transition-all ${
+                                        userVal === false 
+                                        ? 'bg-blue-800 text-white border-blue-800 shadow-sm' 
+                                        : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
+                                    }">Sai</button>
+                                </div>
+                            </div>
                     `;
-                }
-                html += `</div>`;
+                    if (topicAns.submitted) {
+                        const isRight = userVal === st.correct;
+                        html += `
+                            <div class="mt-2 p-2.5 rounded-lg text-xs ${isRight ? 'bg-emerald-50 text-emerald-900 border border-emerald-200' : 'bg-rose-50 text-rose-900 border border-rose-200'}">
+                                <span class="font-bold mr-1">${isRight ? '<i class="fa-solid fa-check"></i> Chính xác!' : '<i class="fa-solid fa-xmark"></i> Chưa chính xác!'}</span>
+                                <span>${st.explanation}</span>
+                            </div>
+                        `;
+                    }
+                    html += `</div>`;
+                });
+
+                html += `</div></div>`;
             });
 
-            html += `</div></div></div>`;
+            html += `</div>`;
 
             // --- PHẦN III: TRẮC NGHIỆM TRẢ LỜI NGẮN ---
             html += `
                 <div class="space-y-4">
                     <div class="border-b border-slate-200 pb-2">
                         <h3 class="font-bold text-blue-950 text-base uppercase tracking-wide">Phần III. Câu trắc nghiệm trả lời ngắn</h3>
-                        <p class="text-xs text-slate-500">Thí sinh điền giá trị số kết quả vào ô trống bên dưới.</p>
+                        <p class="text-xs text-slate-500">Thí sinh trả lời từ câu 1 đến câu ${qData.part3.length}. Điền giá trị số kết quả vào ô trống bên dưới.</p>
                     </div>
             `;
 
             qData.part3.forEach((q3, idx3) => {
                 const val3 = topicAns.part3[q3.id] || '';
+                if (q3.context) {
+                    html += `
+                        <div class="bg-slate-100 border-l-4 border-slate-600 rounded-r-xl p-3.5 text-xs sm:text-sm text-slate-800 leading-relaxed">
+                            ${q3.context}
+                        </div>
+                    `;
+                }
                 html += `
                     <div class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-sm space-y-3">
                         <p class="font-semibold text-slate-900 text-sm sm:text-base">
@@ -1152,7 +1633,7 @@
                         </p>
                         <div class="flex flex-col sm:flex-row sm:items-center gap-3">
                             <label class="text-xs font-semibold text-slate-600 uppercase tracking-wider">Đáp số của em:</label>
-                            <input type="text" ${topicAns.submitted ? 'disabled' : ''} value="${val3}" oninput="inputPart3(${topic.id}, '${q3.id}', this.value)" placeholder="Nhập kết quả số (VD: 300)" class="w-full sm:w-56 px-3.5 py-2 rounded-xl border border-slate-300 focus:border-blue-700 focus:ring-2 focus:ring-blue-200 outline-none text-sm font-mono font-bold text-slate-900 disabled:bg-slate-100">
+                            <input type="text" ${topicAns.submitted ? 'disabled' : ''} value="${val3}" oninput="inputPart3(${topic.id}, '${q3.id}', this.value)" placeholder="Nhập kết quả số (VD: 3,25)" class="w-full sm:w-56 px-3.5 py-2 rounded-xl border border-slate-300 focus:border-blue-700 focus:ring-2 focus:ring-blue-200 outline-none text-sm font-mono font-bold text-slate-900 disabled:bg-slate-100">
                         </div>
                 `;
                 if (topicAns.submitted) {
@@ -1162,7 +1643,7 @@
                     html += `
                         <div class="p-3.5 rounded-xl text-xs sm:text-sm ${isRight ? 'bg-emerald-50 border border-emerald-200 text-emerald-950' : 'bg-rose-50 border border-rose-200 text-rose-950'}">
                             <div class="font-bold mb-1">
-                                ${isRight ? '<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i>Chính xác!' : `<i class="fa-solid fa-circle-xmark text-rose-600 mr-1"></i>Chưa đúng (Đáp án chuẩn: <span class="font-mono underline">${q3.answer}</span>)`}
+                                ${isRight ? '<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i>Chính xác!' : `<i class="fa-solid fa-circle-xmark text-rose-600 mr-1"></i>Chưa đúng (Đáp án chuẩn: <span class="font-mono underline">${q3.answer.replace('.', ',')}</span>)`}
                             </div>
                             <p class="text-slate-700">${q3.explanation}</p>
                         </div>
@@ -1199,6 +1680,7 @@
                 `;
             }
 
+            html += `</div>`;
             return html;
         }
 
@@ -1207,13 +1689,13 @@
             let html = `
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <h3 class="font-bold text-slate-900 text-base">Học liệu & Phiếu bài tập chuyên đề ${topic.id}</h3>
+                        <h3 class="font-bold text-slate-900 text-base">${topic.isFullExam ? 'Học liệu & Đề thi tổng hợp' : 'Học liệu & Phiếu bài tập chuyên đề ' + topic.id}</h3>
                         <span class="text-xs text-slate-500">${topic.resources.length} tài liệu sẵn sàng</span>
                     </div>
                     <div class="grid grid-cols-1 gap-3.5">
             `;
 
-            topic.resources.forEach((res, idx) => {
+            topic.resources.forEach((res) => {
                 let iconBadge = '';
                 let btnLabel = 'Tải tài liệu';
                 let btnIcon = 'fa-download';
@@ -1269,10 +1751,15 @@
             renderTabContent();
         }
 
-        function selectPart2(topicId, stIdx, val) {
+        function selectPart2(topicId, ansKey, stIdx, val) {
+            const topic = curriculumData[topicId];
             const ans = ensureTopicAnswerObj(topicId);
             if (ans.submitted) return;
-            ans.part2[stIdx] = val;
+            if (topic.quiz.part2List) {
+                ans.part2[ansKey] = val;
+            } else {
+                ans.part2[stIdx] = val;
+            }
             renderTabContent();
         }
 
@@ -1285,44 +1772,56 @@
         function submitQuiz(topicId) {
             const topic = curriculumData[topicId];
             const ans = ensureTopicAnswerObj(topicId);
-
-            // Tính điểm theo thang 10.0:
-            // Phần 1 (2 câu): 3.0 điểm (mỗi câu 1.5đ)
-            // Phần 2 (4 ý Đúng/Sai): 4.0 điểm (đúng 1 ý: 0.4đ, 2 ý: 1.0đ, 3 ý: 2.0đ, 4 ý: 4.0đ - mô phỏng lũy tiến chuẩn Bộ GD&ĐT)
-            // Phần 3 (1 câu trả lời ngắn): 3.0 điểm
             let score = 0;
 
-            // Chấm Phần 1
-            topic.quiz.part1.forEach(q => {
-                if (ans.part1[q.id] === q.correct) {
-                    score += 1.5;
-                }
-            });
-
-            // Chấm Phần 2 (lũy tiến)
-            let p2CorrectCount = 0;
-            topic.quiz.part2.statements.forEach((st, idx) => {
-                if (ans.part2[idx] === st.correct) {
-                    p2CorrectCount++;
-                }
-            });
-            const p2Scale = [0, 0.4, 1.0, 2.0, 4.0];
-            score += p2Scale[p2CorrectCount];
-
-            // Chấm Phần 3
-            topic.quiz.part3.forEach(q3 => {
-                const rawVal = (ans.part3[q3.id] || '').trim().replace(',', '.');
-                const numUser = parseFloat(rawVal);
-                const numAns = parseFloat(q3.answer);
-                if (!isNaN(numUser) && Math.abs(numUser - numAns) <= q3.tolerance) {
-                    score += 3.0;
-                }
-            });
+            if (topic.isFullExam) {
+                // Thang điểm chuẩn Bộ GD&ĐT (28 câu = 10,0 điểm):
+                // Phần I: 0,25đ / câu
+                topic.quiz.part1.forEach(q => {
+                    if (ans.part1[q.id] === q.correct) score += 0.25;
+                });
+                // Phần II: 1 ý = 0,10đ; 2 ý = 0,25đ; 3 ý = 0,50đ; 4 ý = 1,00đ
+                const p2StdScale = [0, 0.10, 0.25, 0.50, 1.00];
+                topic.quiz.part2List.forEach(p2 => {
+                    let rightCount = 0;
+                    p2.statements.forEach((st, stIdx) => {
+                        if (ans.part2[`${p2.id}_${stIdx}`] === st.correct) rightCount++;
+                    });
+                    score += p2StdScale[rightCount];
+                });
+                // Phần III: 0,25đ / câu
+                topic.quiz.part3.forEach(q3 => {
+                    const rawVal = (ans.part3[q3.id] || '').trim().replace(',', '.');
+                    const numUser = parseFloat(rawVal);
+                    const numAns = parseFloat(q3.answer);
+                    if (!isNaN(numUser) && Math.abs(numUser - numAns) <= q3.tolerance) {
+                        score += 0.25;
+                    }
+                });
+            } else {
+                // Thang điểm luyện tập từng chuyên đề (7 câu = 10,0 điểm)
+                topic.quiz.part1.forEach(q => {
+                    if (ans.part1[q.id] === q.correct) score += 1.5;
+                });
+                let p2CorrectCount = 0;
+                topic.quiz.part2.statements.forEach((st, idx) => {
+                    if (ans.part2[idx] === st.correct) p2CorrectCount++;
+                });
+                const p2Scale = [0, 0.4, 1.0, 2.0, 4.0];
+                score += p2Scale[p2CorrectCount];
+                topic.quiz.part3.forEach(q3 => {
+                    const rawVal = (ans.part3[q3.id] || '').trim().replace(',', '.');
+                    const numUser = parseFloat(rawVal);
+                    const numAns = parseFloat(q3.answer);
+                    if (!isNaN(numUser) && Math.abs(numUser - numAns) <= q3.tolerance) {
+                        score += 3.0;
+                    }
+                });
+            }
 
             ans.submitted = true;
             ans.lastScore = score;
 
-            // Cập nhật điểm cao nhất vào localStorage
             const prevBest = appState.quizScores[topicId] || 0;
             if (score >= prevBest) {
                 appState.quizScores[topicId] = score;
@@ -1336,6 +1835,9 @@
 
         function resetQuiz(topicId) {
             appState.userAnswers[topicId] = { part1: {}, part2: {}, part3: {}, submitted: false, lastScore: 0 };
+            if (curriculumData[topicId].isFullExam) {
+                examSecondsLeft = 50 * 60;
+            }
             renderTabContent();
             showToast('Đã làm mới bài luyện tập.', 'info');
         }
@@ -1344,11 +1846,11 @@
             if (type === 'VIDEO') {
                 showToast(`Đang mở trình phát video: "${title}"`, 'info');
             } else {
-                // Tạo file tóm tắt text/markdown tải xuống thực tế để giáo viên/học sinh trải nghiệm ngay
                 const topic = curriculumData[appState.currentTopicId];
                 let fileContent = `CỔNG ÔN TẬP THI TỐT NGHIỆP THPT MÔN VẬT LÍ (GDPT 2018)\n`;
+                fileContent += `Biên soạn: Thầy Lê Minh Trung - Trường THPT Trần Phú - Hoàn Kiếm\n`;
                 fileContent += `Tài liệu: ${title}\n`;
-                fileContent += `Chuyên đề: ${topic.title}\n`;
+                fileContent += `Mục: ${topic.title}\n`;
                 fileContent += `====================================================\n\n`;
                 topic.theory.forEach(sec => {
                     fileContent += `${sec.heading}\n${sec.content}\n\n`;
@@ -1372,8 +1874,7 @@
         // 8. RENDER SIDEBAR (LỘ TRÌNH, MỤC TIÊU HÀNG NGÀY & THỐNG KÊ ĐIỂM)
         // =========================================================================
         function renderSidebar() {
-            // 1. Tiến độ tổng thể & Danh sách chuyên đề
-            const totalTopics = 5;
+            const totalTopics = Object.keys(curriculumData).length;
             const completedCount = appState.completedTopics.length;
             const percent = Math.round((completedCount / totalTopics) * 100);
 
@@ -1382,7 +1883,7 @@
 
             const roadmapContainer = document.getElementById('roadmap-list');
             let roadmapHTML = '';
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= totalTopics; i++) {
                 const t = curriculumData[i];
                 const isDone = appState.completedTopics.includes(i);
                 const isActive = appState.currentTopicId === i;
@@ -1397,23 +1898,22 @@
                             <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 ${
                                 isDone 
                                 ? 'bg-emerald-500 text-white' 
-                                : (isActive ? 'bg-blue-900 text-white' : 'bg-slate-100 text-slate-600')
+                                : (isActive ? 'bg-blue-900 text-white' : (t.isFullExam ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-600'))
                             }">
-                                ${isDone ? '<i class="fa-solid fa-check"></i>' : i}
+                                ${isDone ? '<i class="fa-solid fa-check"></i>' : (t.isFullExam ? '<i class="fa-solid fa-star"></i>' : i)}
                             </span>
                             <span class="text-xs sm:text-sm font-semibold truncate ${isActive ? 'text-blue-950' : 'text-slate-700'}">
                                 ${t.shortTitle}
                             </span>
                         </div>
                         <span class="text-[11px] font-medium shrink-0 ${isDone ? 'text-emerald-600' : 'text-slate-400'}">
-                            ${isDone ? 'Hoàn thành' : 'Đang ôn'}
+                            ${isDone ? 'Hoàn thành' : (t.isFullExam ? 'Đề tổng hợp' : 'Đang ôn')}
                         </span>
                     </button>
                 `;
             }
             roadmapContainer.innerHTML = roadmapHTML;
 
-            // 2. Mục tiêu ôn tập hàng ngày
             const goalsContainer = document.getElementById('daily-goals-list');
             let goalsHTML = '';
             appState.dailyGoals.forEach((g, idx) => {
@@ -1426,10 +1926,9 @@
             });
             goalsContainer.innerHTML = goalsHTML;
 
-            // 3. Thống kê điểm số luyện đề
             const statsContainer = document.getElementById('score-stats-container');
             let statsHTML = '';
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= totalTopics; i++) {
                 const t = curriculumData[i];
                 const score = appState.quizScores[i];
                 const hasScore = typeof score === 'number';
@@ -1444,7 +1943,7 @@
                 statsHTML += `
                     <div>
                         <div class="flex items-center justify-between text-xs mb-1">
-                            <span class="font-medium text-slate-700 truncate pr-2">CĐ ${i}: ${t.shortTitle}</span>
+                            <span class="font-medium text-slate-700 truncate pr-2">${t.isFullExam ? 'Tổng hợp (THPT 2025)' : 'CĐ ' + i + ': ' + t.shortTitle}</span>
                             <span class="font-bold font-mono ${hasScore ? 'text-blue-900' : 'text-slate-400'}">
                                 ${hasScore ? score.toFixed(2) + ' đ' : 'Chưa thi'}
                             </span>
