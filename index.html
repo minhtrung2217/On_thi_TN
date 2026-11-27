@@ -41,6 +41,24 @@
             }
         }
     </script>
+    <style>
+/* Sửa lỗi công thức MathJax / KaTeX tự động xuống dòng */
+mjx-container, 
+.MathJax, 
+.MathJax_Display, 
+.katex-display, 
+.katex {
+    display: inline-block !important;
+    margin: 0 2px !important;
+    width: auto !important;
+}
+
+/* Giữ dấu phẩy, dấu chấm dính liền với công thức phía trước */
+.question-text, .option-text, p, li, div, span {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+}
+</style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-teal-500 selection:text-white">
 
